@@ -8,10 +8,12 @@ function apiApp() {
       try {
         // STEP 1: Visit https://pokeapi.co/api/v2/pokemon?limit=3
         // STEP 2: Add endpoint
-        // const res = await axios.get("YOUR_URL_HERE");
+        const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=3");
         // STEP 3: Identify res.data.results
-        // STEP 4: const details = await Promise.all(...)
-        // STEP 5: this.render(details);
+        // STEP 4: 
+        const details = await Promise.all(res.data.results)
+        // STEP 5: 
+        this.render(details);
       } catch (err) {
         out.innerHTML = `<p class='text-red-600'>Error loading Pokémon ⚠️</p>`;
         console.error(err);
